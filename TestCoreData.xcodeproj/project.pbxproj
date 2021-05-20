@@ -7,6 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8A26DF2026523C8500B3D642 /* Intents.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A6F356E25E4CBD50079FF51 /* Intents.framework */; };
+		8A26DF2426523C8500B3D642 /* IntentHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A26DF2326523C8500B3D642 /* IntentHandler.m */; };
+		8A26DF2826523C8500B3D642 /* SiriExtentIntent.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 8A26DF1F26523C8500B3D642 /* SiriExtentIntent.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		8A26DF312652631400B3D642 /* SendMessageHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A26DF302652631400B3D642 /* SendMessageHandler.m */; };
+		8A26DF37265274EC00B3D642 /* IntentsUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A6F357A25E4CBD50079FF51 /* IntentsUI.framework */; };
+		8A26DF3B265274EC00B3D642 /* IntentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A26DF3A265274EC00B3D642 /* IntentViewController.m */; };
+		8A26DF42265274EC00B3D642 /* SiriIntentUI.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 8A26DF36265274EC00B3D642 /* SiriIntentUI.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		8A26DF492652A36700B3D642 /* SendMessageIntentView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A26DF482652A36700B3D642 /* SendMessageIntentView.m */; };
+		8A26DF4C265354AE00B3D642 /* RideBookHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A26DF4B265354AE00B3D642 /* RideBookHandler.m */; };
+		8A26DF4F2653673000B3D642 /* RideBookListHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A26DF4E2653673000B3D642 /* RideBookListHandler.m */; };
+		8A26DF522653676200B3D642 /* RideBookGetStatusHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A26DF512653676200B3D642 /* RideBookGetStatusHandler.m */; };
 		8A3DD0172637C1AC005BF127 /* UIBezierPath+CornerRadius.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A3DD0152637C1AC005BF127 /* UIBezierPath+CornerRadius.m */; };
 		8A4870C125B13895004B9C1C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A4870C025B13895004B9C1C /* AppDelegate.m */; };
 		8A4870C425B13895004B9C1C /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A4870C325B13895004B9C1C /* SceneDelegate.m */; };
@@ -21,6 +32,23 @@
 		8AB11367262929A00027FB2E /* MCGradientView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AB11365262929A00027FB2E /* MCGradientView.m */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		8A26DF2626523C8500B3D642 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8A4870B425B13895004B9C1C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8A26DF1E26523C8500B3D642;
+			remoteInfo = SiriExtentIntent;
+		};
+		8A26DF40265274EC00B3D642 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8A4870B425B13895004B9C1C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8A26DF35265274EC00B3D642;
+			remoteInfo = SiriIntentUI;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXCopyFilesBuildPhase section */
 		8A6F358A25E4CBD50079FF51 /* Embed App Extensions */ = {
 			isa = PBXCopyFilesBuildPhase;
@@ -28,6 +56,8 @@
 			dstPath = "";
 			dstSubfolderSpec = 13;
 			files = (
+				8A26DF2826523C8500B3D642 /* SiriExtentIntent.appex in Embed App Extensions */,
+				8A26DF42265274EC00B3D642 /* SiriIntentUI.appex in Embed App Extensions */,
 			);
 			name = "Embed App Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -35,6 +65,24 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		8A26DF1F26523C8500B3D642 /* SiriExtentIntent.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = SiriExtentIntent.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		8A26DF2226523C8500B3D642 /* IntentHandler.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IntentHandler.h; sourceTree = "<group>"; };
+		8A26DF2326523C8500B3D642 /* IntentHandler.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IntentHandler.m; sourceTree = "<group>"; };
+		8A26DF2526523C8500B3D642 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8A26DF2F2652631400B3D642 /* SendMessageHandler.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SendMessageHandler.h; sourceTree = "<group>"; };
+		8A26DF302652631400B3D642 /* SendMessageHandler.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SendMessageHandler.m; sourceTree = "<group>"; };
+		8A26DF36265274EC00B3D642 /* SiriIntentUI.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = SiriIntentUI.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		8A26DF39265274EC00B3D642 /* IntentViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IntentViewController.h; sourceTree = "<group>"; };
+		8A26DF3A265274EC00B3D642 /* IntentViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IntentViewController.m; sourceTree = "<group>"; };
+		8A26DF3F265274EC00B3D642 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8A26DF472652A36700B3D642 /* SendMessageIntentView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SendMessageIntentView.h; sourceTree = "<group>"; };
+		8A26DF482652A36700B3D642 /* SendMessageIntentView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SendMessageIntentView.m; sourceTree = "<group>"; };
+		8A26DF4A265354AE00B3D642 /* RideBookHandler.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RideBookHandler.h; sourceTree = "<group>"; };
+		8A26DF4B265354AE00B3D642 /* RideBookHandler.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RideBookHandler.m; sourceTree = "<group>"; };
+		8A26DF4D2653673000B3D642 /* RideBookListHandler.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RideBookListHandler.h; sourceTree = "<group>"; };
+		8A26DF4E2653673000B3D642 /* RideBookListHandler.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RideBookListHandler.m; sourceTree = "<group>"; };
+		8A26DF502653676200B3D642 /* RideBookGetStatusHandler.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RideBookGetStatusHandler.h; sourceTree = "<group>"; };
+		8A26DF512653676200B3D642 /* RideBookGetStatusHandler.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RideBookGetStatusHandler.m; sourceTree = "<group>"; };
 		8A3DD0152637C1AC005BF127 /* UIBezierPath+CornerRadius.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIBezierPath+CornerRadius.m"; sourceTree = "<group>"; };
 		8A3DD0162637C1AC005BF127 /* UIBezierPath+CornerRadius.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIBezierPath+CornerRadius.h"; sourceTree = "<group>"; };
 		8A4870BC25B13895004B9C1C /* TestCoreData.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TestCoreData.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -63,6 +111,22 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		8A26DF1C26523C8500B3D642 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8A26DF2026523C8500B3D642 /* Intents.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8A26DF33265274EC00B3D642 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8A26DF37265274EC00B3D642 /* IntentsUI.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		8A4870B925B13895004B9C1C /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -73,10 +137,50 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8A26DF2126523C8500B3D642 /* SiriExtentIntent */ = {
+			isa = PBXGroup;
+			children = (
+				8A26DF2226523C8500B3D642 /* IntentHandler.h */,
+				8A26DF2326523C8500B3D642 /* IntentHandler.m */,
+				8A26DF4A265354AE00B3D642 /* RideBookHandler.h */,
+				8A26DF4B265354AE00B3D642 /* RideBookHandler.m */,
+				8A26DF4D2653673000B3D642 /* RideBookListHandler.h */,
+				8A26DF4E2653673000B3D642 /* RideBookListHandler.m */,
+				8A26DF502653676200B3D642 /* RideBookGetStatusHandler.h */,
+				8A26DF512653676200B3D642 /* RideBookGetStatusHandler.m */,
+				8A26DF2F2652631400B3D642 /* SendMessageHandler.h */,
+				8A26DF302652631400B3D642 /* SendMessageHandler.m */,
+				8A26DF2526523C8500B3D642 /* Info.plist */,
+			);
+			path = SiriExtentIntent;
+			sourceTree = "<group>";
+		};
+		8A26DF38265274EC00B3D642 /* SiriIntentUI */ = {
+			isa = PBXGroup;
+			children = (
+				8A26DF462652A35200B3D642 /* Views */,
+				8A26DF39265274EC00B3D642 /* IntentViewController.h */,
+				8A26DF3A265274EC00B3D642 /* IntentViewController.m */,
+				8A26DF3F265274EC00B3D642 /* Info.plist */,
+			);
+			path = SiriIntentUI;
+			sourceTree = "<group>";
+		};
+		8A26DF462652A35200B3D642 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				8A26DF472652A36700B3D642 /* SendMessageIntentView.h */,
+				8A26DF482652A36700B3D642 /* SendMessageIntentView.m */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		8A4870B325B13895004B9C1C = {
 			isa = PBXGroup;
 			children = (
 				8A4870BE25B13895004B9C1C /* TestCoreData */,
+				8A26DF2126523C8500B3D642 /* SiriExtentIntent */,
+				8A26DF38265274EC00B3D642 /* SiriIntentUI */,
 				8A6F356D25E4CBD50079FF51 /* Frameworks */,
 				8A4870BD25B13895004B9C1C /* Products */,
 			);
@@ -86,6 +190,8 @@
 			isa = PBXGroup;
 			children = (
 				8A4870BC25B13895004B9C1C /* TestCoreData.app */,
+				8A26DF1F26523C8500B3D642 /* SiriExtentIntent.appex */,
+				8A26DF36265274EC00B3D642 /* SiriIntentUI.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -130,6 +236,40 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		8A26DF1E26523C8500B3D642 /* SiriExtentIntent */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8A26DF2926523C8500B3D642 /* Build configuration list for PBXNativeTarget "SiriExtentIntent" */;
+			buildPhases = (
+				8A26DF1B26523C8500B3D642 /* Sources */,
+				8A26DF1C26523C8500B3D642 /* Frameworks */,
+				8A26DF1D26523C8500B3D642 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SiriExtentIntent;
+			productName = SiriExtentIntent;
+			productReference = 8A26DF1F26523C8500B3D642 /* SiriExtentIntent.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
+		8A26DF35265274EC00B3D642 /* SiriIntentUI */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8A26DF43265274EC00B3D642 /* Build configuration list for PBXNativeTarget "SiriIntentUI" */;
+			buildPhases = (
+				8A26DF32265274EC00B3D642 /* Sources */,
+				8A26DF33265274EC00B3D642 /* Frameworks */,
+				8A26DF34265274EC00B3D642 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SiriIntentUI;
+			productName = SiriIntentUI;
+			productReference = 8A26DF36265274EC00B3D642 /* SiriIntentUI.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 		8A4870BB25B13895004B9C1C /* TestCoreData */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 8A4870D825B13898004B9C1C /* Build configuration list for PBXNativeTarget "TestCoreData" */;
@@ -142,6 +282,8 @@
 			buildRules = (
 			);
 			dependencies = (
+				8A26DF2726523C8500B3D642 /* PBXTargetDependency */,
+				8A26DF41265274EC00B3D642 /* PBXTargetDependency */,
 			);
 			name = TestCoreData;
 			productName = TestCoreData;
@@ -156,6 +298,12 @@
 			attributes = {
 				LastUpgradeCheck = 1230;
 				TargetAttributes = {
+					8A26DF1E26523C8500B3D642 = {
+						CreatedOnToolsVersion = 12.5;
+					};
+					8A26DF35265274EC00B3D642 = {
+						CreatedOnToolsVersion = 12.5;
+					};
 					8A4870BB25B13895004B9C1C = {
 						CreatedOnToolsVersion = 12.3;
 					};
@@ -175,11 +323,27 @@
 			projectRoot = "";
 			targets = (
 				8A4870BB25B13895004B9C1C /* TestCoreData */,
+				8A26DF1E26523C8500B3D642 /* SiriExtentIntent */,
+				8A26DF35265274EC00B3D642 /* SiriIntentUI */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		8A26DF1D26523C8500B3D642 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8A26DF34265274EC00B3D642 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		8A4870BA25B13895004B9C1C /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -193,6 +357,27 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		8A26DF1B26523C8500B3D642 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8A26DF522653676200B3D642 /* RideBookGetStatusHandler.m in Sources */,
+				8A26DF4C265354AE00B3D642 /* RideBookHandler.m in Sources */,
+				8A26DF4F2653673000B3D642 /* RideBookListHandler.m in Sources */,
+				8A26DF312652631400B3D642 /* SendMessageHandler.m in Sources */,
+				8A26DF2426523C8500B3D642 /* IntentHandler.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8A26DF32265274EC00B3D642 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8A26DF492652A36700B3D642 /* SendMessageIntentView.m in Sources */,
+				8A26DF3B265274EC00B3D642 /* IntentViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		8A4870B825B13895004B9C1C /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -210,6 +395,19 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		8A26DF2726523C8500B3D642 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8A26DF1E26523C8500B3D642 /* SiriExtentIntent */;
+			targetProxy = 8A26DF2626523C8500B3D642 /* PBXContainerItemProxy */;
+		};
+		8A26DF41265274EC00B3D642 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8A26DF35265274EC00B3D642 /* SiriIntentUI */;
+			targetProxy = 8A26DF40265274EC00B3D642 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		8A4870C825B13895004B9C1C /* Main.storyboard */ = {
@@ -231,6 +429,90 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		8A26DF2A26523C8500B3D642 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "Apple Development: Pengcheng Song (63U36T6LWR)";
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = 2J44BWS3VX;
+				INFOPLIST_FILE = SiriExtentIntent/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.baidu.map.rentcar.Siri;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = BaiduMapRentCarSiri;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		8A26DF2B26523C8500B3D642 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "Apple Development: Pengcheng Song (63U36T6LWR)";
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = 2J44BWS3VX;
+				INFOPLIST_FILE = SiriExtentIntent/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.baidu.map.rentcar.Siri;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = BaiduMapRentCarSiri;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+		8A26DF44265274EC00B3D642 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "Apple Development: Pengcheng Song (63U36T6LWR)";
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = 2J44BWS3VX;
+				INFOPLIST_FILE = SiriIntentUI/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.baidu.map.rentcar.SiriUI;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = BaiduMapRentCarSiriUI;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		8A26DF45265274EC00B3D642 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "Apple Development: Pengcheng Song (63U36T6LWR)";
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = 2J44BWS3VX;
+				INFOPLIST_FILE = SiriIntentUI/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.baidu.map.rentcar.SiriUI;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = BaiduMapRentCarSiriUI;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
 		8A4870D625B13898004B9C1C /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -282,7 +564,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -335,7 +617,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -349,18 +631,18 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = TestCoreData/TestCoreData.entitlements;
-				CODE_SIGN_IDENTITY = "Apple Development: XiuLong Xia (WEGAVF6W59)";
+				CODE_SIGN_IDENTITY = "Apple Development: Pengcheng Song (63U36T6LWR)";
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = 2J44BWS3VX;
 				INFOPLIST_FILE = TestCoreData/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.baidu.map.cjh;
+				PRODUCT_BUNDLE_IDENTIFIER = com.baidu.map.rentcar;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = BaiduMapCJH_dev;
+				PROVISIONING_PROFILE_SPECIFIER = BaiduMapRentCarDev;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
@@ -371,18 +653,18 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = TestCoreData/TestCoreData.entitlements;
-				CODE_SIGN_IDENTITY = "Apple Development: XiuLong Xia (WEGAVF6W59)";
+				CODE_SIGN_IDENTITY = "Apple Development: Pengcheng Song (63U36T6LWR)";
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = 2J44BWS3VX;
 				INFOPLIST_FILE = TestCoreData/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.baidu.map.cjh;
+				PRODUCT_BUNDLE_IDENTIFIER = com.baidu.map.rentcar;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = BaiduMapCJH_dev;
+				PROVISIONING_PROFILE_SPECIFIER = BaiduMapRentCarDev;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
@@ -390,6 +672,24 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		8A26DF2926523C8500B3D642 /* Build configuration list for PBXNativeTarget "SiriExtentIntent" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8A26DF2A26523C8500B3D642 /* Debug */,
+				8A26DF2B26523C8500B3D642 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8A26DF43265274EC00B3D642 /* Build configuration list for PBXNativeTarget "SiriIntentUI" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8A26DF44265274EC00B3D642 /* Debug */,
+				8A26DF45265274EC00B3D642 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		8A4870B725B13895004B9C1C /* Build configuration list for PBXProject "TestCoreData" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

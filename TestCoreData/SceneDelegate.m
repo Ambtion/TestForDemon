@@ -41,6 +41,10 @@
     // This may occur due to temporary interruptions (ex. an incoming phone call).
 }
 
+- (void)scene:(UIScene *)scene continueUserActivity:(NSUserActivity *)userActivity {
+   // 实现了scene Delegate 会调用这里，不调用AppDelegate内容
+    NSLog(@"xxx %@",userActivity.activityType);
+}
 
 - (void)sceneWillEnterForeground:(UIScene *)scene {
     // Called as the scene transitions from the background to the foreground.
