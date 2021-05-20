@@ -13,6 +13,8 @@
 #import "MCGradientView.h"
 #import "CSView.h"
 #import "UIBezierPath+CornerRadius.h"
+#import <CoreSpotlight/CoreSpotlight.h>
+
 
 @interface ViewController ()<UITableViewDelegate, UITableViewDataSource, NSFetchedResultsControllerDelegate> {
     
@@ -110,21 +112,103 @@
     return [UIImage imageNamed:@"bg"];
 }
 
+static NSUserActivity *active;
+
+- (void)registerSpotlight:(BOOL)useActivity {
+    
+    if (useActivity) {
+        active = [[NSUserActivity alloc] initWithActivityType:@"com.baidu.map.rentcar.shortcut"];
+        active.userInfo = @{
+            @"name":@"xxx"
+        };
+        active.title = @"测试打车专用";
+        active.keywords = [NSSet setWithObjects:@"打车",@"xxxx", nil];
+        active.userInfo = @{
+            @"name":@"打车"
+        };
+        active.eligibleForHandoff = YES;
+        active.eligibleForSearch = YES;
+        
+        CSSearchableItemAttributeSet *set = [[CSSearchableItemAttributeSet alloc] init];
+        UIImage *image = [UIImage imageNamed:@"bus_assistant_addhome_icon"];
+        
+        set.thumbnailData = UIImagePNGRepresentation(image);
+        set.contentDescription = @"这是我的蜜菓奶茶";
+        active.contentAttributeSet = set;
+        [active becomeCurrent];
+        
+    } else {
+        
+        [[CSSearchableIndex defaultSearchableIndex] deleteAllSearchableItemsWithCompletionHandler:^(NSError * _Nullable error) {
+            
+        }];
+        
+        //创建SearchableItems的数组
+        NSMutableArray *searchableItems = [[NSMutableArray alloc] init];
+        //1.创建条目的属性集合
+        CSSearchableItemAttributeSet
+        * attributeSet = [[CSSearchableItemAttributeSet alloc]
+                          initWithItemContentType:@"image"];
+        
+        UIImage *image = [UIImage imageNamed:@"bus_assistant_addhome_icon"];
+
+        //2.给属性集合添加属性
+        attributeSet.title = @"1";
+        attributeSet.contentDescription = @"1是测试";
+        attributeSet.keywords = @[@"1",@"ab"];
+        attributeSet.thumbnailData = UIImagePNGRepresentation(image);
+        //3.属性集合与条目进行关联
+        CSSearchableItem
+        *searchableItem = [[CSSearchableItem alloc]
+        initWithUniqueIdentifier:@"1" domainIdentifier:@"rentcar.test"
+        attributeSet:attributeSet];
+        
+        //把该条目进行暂存
+        [searchableItems addObject:searchableItem];
+        
+        
+        attributeSet = [[CSSearchableItemAttributeSet alloc]
+                          initWithItemContentType:@"image"];
+        attributeSet.title = @"2";
+        attributeSet.keywords = @[@"2",@"ab"];
+        attributeSet.contentDescription = @"2是测试";
+        attributeSet.thumbnailData = UIImagePNGRepresentation(image);
+
+        //3.2属性集合与条目进行关联
+        searchableItem = [[CSSearchableItem alloc]
+        initWithUniqueIdentifier:@"2" domainIdentifier:@"rentcar.test"
+        attributeSet:attributeSet];
+        [searchableItems addObject:searchableItem];
+        
+        //4.把条目数组与索引进行关联
+        
+        
+        [[CSSearchableIndex
+        defaultSearchableIndex] indexSearchableItems:searchableItems
+        completionHandler:^(NSError * _Nullable error) {
+        if (error) {
+        NSLog(@"save spotilight error %s, %@", __FUNCTION__, [error localizedDescription]);
+        }
+        }];
+    }
+}
 - (void)viewDidLoad {
     
     [super viewDidLoad];
+    [self registerSpotlight:NO];
+   
     
-    UIView *view = [[UIView alloc] initWithFrame:CGRectMake(20, 100, 300, 100)];
-    view.backgroundColor = UIColor.redColor;
-    [self.view addSubview:view];
-    
-    CAShapeLayer *shaLayer = [CAShapeLayer layer];
-    shaLayer.path = [UIBezierPath bezierPathWithRoundedRect:view.bounds
-                                   byRoundingCornersTopLeft:CGSizeMake(40, 10)
-                                             TopRightRadius:CGSizeMake(50, 0) BottomLeft:CGSizeMake(30, 50) BottomRight:CGSizeMake(50, 70)].CGPath;
-    
-    view.layer.mask = shaLayer;
-    
+//    UIView *view = [[UIView alloc] initWithFrame:CGRectMake(20, 100, 300, 100)];
+//    view.backgroundColor = UIColor.redColor;
+//    [self.view addSubview:view];
+//
+//    CAShapeLayer *shaLayer = [CAShapeLayer layer];
+//    shaLayer.path = [UIBezierPath bezierPathWithRoundedRect:view.bounds
+//                                   byRoundingCornersTopLeft:CGSizeMake(40, 10)
+//                                             TopRightRadius:CGSizeMake(50, 0) BottomLeft:CGSizeMake(30, 50) BottomRight:CGSizeMake(50, 70)].CGPath;
+//
+//    view.layer.mask = shaLayer;
+//
 //    CGRect contentRect = view.bounds;
 //    CGSize cornerRadi = CGSizeMake(12, 12);
 //    UIRectCorner rectCorner = UIRectCornerTopLeft | UIRectCornerTopRight;
