@@ -15,8 +15,8 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    NSPersistentContainer *container = [NSPersistentContainer persistentContainerWithName:@"TestCoreData"];
-    NSLog(@"%@", container.persistentStoreDescriptions);
+//    NSPersistentContainer *container = [NSPersistentContainer persistentContainerWithName:@"TestCoreData"];
+//    NSLog(@"%@", container.persistentStoreDescriptions);
     return YES;
 }
 

@@ -7,32 +7,32 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "7FB5B60D-1E7A-4D30-BFEF-046505992889"
+            uuid = "07D440BA-D81E-4E75-B137-FC914BE16C22"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "TestCoreData/ViewController.m"
+            filePath = "TestCoreData/MCTimePillarView.m"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "315"
-            endingLineNumber = "315"
-            landmarkName = "-resultController"
+            startingLineNumber = "502"
+            endingLineNumber = "502"
+            landmarkName = "-observeValueForKeyPath:ofObject:change:context:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "DC582EB4-8851-4E12-8DC6-E532A0D44A5A"
+            uuid = "E91D29CC-A9D3-4602-BE49-D9FFB7C83A41"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "TestCoreData/ViewController.m"
+            filePath = "TestCoreData/MCTimePillarView.m"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "98"
-            endingLineNumber = "98"
-            landmarkName = "-dragBgImage"
+            startingLineNumber = "940"
+            endingLineNumber = "940"
+            landmarkName = "-didTapItemView:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
