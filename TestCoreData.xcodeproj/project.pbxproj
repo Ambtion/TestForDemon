@@ -16,11 +16,8 @@
 		8A4870CF25B13898004B9C1C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8A4870CE25B13898004B9C1C /* Assets.xcassets */; };
 		8A4870D225B13898004B9C1C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8A4870D025B13898004B9C1C /* LaunchScreen.storyboard */; };
 		8A4870D525B13898004B9C1C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A4870D425B13898004B9C1C /* main.m */; };
-		8A49EA34268301B900460BD3 /* MCDashLineView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A49EA33268301B900460BD3 /* MCDashLineView.m */; };
-		8A49EA37268320F200460BD3 /* MCColunmItemView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A49EA36268320F200460BD3 /* MCColunmItemView.m */; };
 		8A49EA3A2683220100460BD3 /* MCTimePillarView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A49EA392683220100460BD3 /* MCTimePillarView.m */; };
 		8A7E4577262EB23B006E107D /* CSView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A7E4576262EB23B006E107D /* CSView.m */; };
-		8A9793452682E4B10010036D /* MCColumnSrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A9793442682E4B10010036D /* MCColumnSrollView.m */; };
 		8AA9247725F20C5A006F2205 /* MemoryRead.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AA9247625F20C5A006F2205 /* MemoryRead.m */; };
 		8AB11367262929A00027FB2E /* MCGradientView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AB11365262929A00027FB2E /* MCGradientView.m */; };
 /* End PBXBuildFile section */
@@ -55,10 +52,6 @@
 		8A4870D325B13898004B9C1C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8A4870D425B13898004B9C1C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		8A48711225B17464004B9C1C /* TestCoreData2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = TestCoreData2.xcdatamodel; sourceTree = "<group>"; };
-		8A49EA32268301B900460BD3 /* MCDashLineView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MCDashLineView.h; sourceTree = "<group>"; };
-		8A49EA33268301B900460BD3 /* MCDashLineView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MCDashLineView.m; sourceTree = "<group>"; };
-		8A49EA35268320F200460BD3 /* MCColunmItemView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MCColunmItemView.h; sourceTree = "<group>"; };
-		8A49EA36268320F200460BD3 /* MCColunmItemView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MCColunmItemView.m; sourceTree = "<group>"; };
 		8A49EA382683220100460BD3 /* MCTimePillarView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCTimePillarView.h; sourceTree = "<group>"; };
 		8A49EA392683220100460BD3 /* MCTimePillarView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MCTimePillarView.m; sourceTree = "<group>"; };
 		8A6F356E25E4CBD50079FF51 /* Intents.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Intents.framework; path = System/Library/Frameworks/Intents.framework; sourceTree = SDKROOT; };
@@ -66,8 +59,6 @@
 		8A6F35A925E4D7350079FF51 /* TestCoreData.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = TestCoreData.entitlements; sourceTree = "<group>"; };
 		8A7E4575262EB23B006E107D /* CSView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSView.h; sourceTree = "<group>"; };
 		8A7E4576262EB23B006E107D /* CSView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSView.m; sourceTree = "<group>"; };
-		8A9793432682E4B10010036D /* MCColumnSrollView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MCColumnSrollView.h; sourceTree = "<group>"; };
-		8A9793442682E4B10010036D /* MCColumnSrollView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MCColumnSrollView.m; sourceTree = "<group>"; };
 		8AA9247525F20C5A006F2205 /* MemoryRead.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MemoryRead.h; sourceTree = "<group>"; };
 		8AA9247625F20C5A006F2205 /* MemoryRead.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MemoryRead.m; sourceTree = "<group>"; };
 		8AB11365262929A00027FB2E /* MCGradientView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MCGradientView.m; sourceTree = "<group>"; };
@@ -116,12 +107,6 @@
 				8A4870C325B13895004B9C1C /* SceneDelegate.m */,
 				8A4870C525B13895004B9C1C /* ViewController.h */,
 				8A4870C625B13895004B9C1C /* ViewController.m */,
-				8A9793432682E4B10010036D /* MCColumnSrollView.h */,
-				8A9793442682E4B10010036D /* MCColumnSrollView.m */,
-				8A49EA32268301B900460BD3 /* MCDashLineView.h */,
-				8A49EA33268301B900460BD3 /* MCDashLineView.m */,
-				8A49EA35268320F200460BD3 /* MCColunmItemView.h */,
-				8A49EA36268320F200460BD3 /* MCColunmItemView.m */,
 				8A49EA382683220100460BD3 /* MCTimePillarView.h */,
 				8A49EA392683220100460BD3 /* MCTimePillarView.m */,
 				8AA9247525F20C5A006F2205 /* MemoryRead.h */,
@@ -218,7 +203,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				8A3DD0172637C1AC005BF127 /* UIBezierPath+CornerRadius.m in Sources */,
-				8A49EA37268320F200460BD3 /* MCColunmItemView.m in Sources */,
 				8AA9247725F20C5A006F2205 /* MemoryRead.m in Sources */,
 				8A4870D525B13898004B9C1C /* main.m in Sources */,
 				8A4870CD25B13895004B9C1C /* TestCoreData.xcdatamodeld in Sources */,
@@ -227,9 +211,7 @@
 				8A4870C125B13895004B9C1C /* AppDelegate.m in Sources */,
 				8A4870C425B13895004B9C1C /* SceneDelegate.m in Sources */,
 				8AB11367262929A00027FB2E /* MCGradientView.m in Sources */,
-				8A49EA34268301B900460BD3 /* MCDashLineView.m in Sources */,
 				8A49EA3A2683220100460BD3 /* MCTimePillarView.m in Sources */,
-				8A9793452682E4B10010036D /* MCColumnSrollView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -53,7 +53,7 @@
         attributes.title2 = @"$20";
     } else {
         attributes.available = NO;
-        attributes.value = 0.2;
+        attributes.value = 0.3;
         attributes.annotation = nil;
         attributes.title2 = nil;
     }
