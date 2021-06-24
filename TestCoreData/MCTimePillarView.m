@@ -8,7 +8,7 @@
 
 #import "MCTimePillarView.h"
 
-#define BMThemeColor(v) [UIColor redColor]
+#define BMThemeColor(v) [UIColor grayColor]
 #define BMThemeCGColor(v) [UIColor greenColor].CGColor
 
 #ifndef BNAVI_ADAPTOR_VALUE_750
@@ -48,7 +48,7 @@
 @property (nonatomic) CAGradientLayer *barLayer;
 
 @property (nonatomic) CATextLayer *textLayer;
-
+@property (nonatomic) UIView *tempView;
 @end
 
 @implementation MCPillarItemView
@@ -59,6 +59,8 @@
     self = [super init];
     if (self) {
         [self commonInit];
+        self.tempView = [UIView new];
+        self.tempView.backgroundColor = [UIColor redColor];
     }
     return self;
 }
@@ -91,26 +93,35 @@
 }
 
 -(void)handleNormalState{
-//    _barLayer.colors = @[(id)[[UIColor colorWithRed:0xc3/255.0f green:0xd6/255.0f blue:0xfd/255.0f alpha:1.0f] CGColor],
-//                         (id)[[UIColor colorWithRed:0xe6/255.0f green:0xed/255.0f blue:0xfc/255.0f alpha:1.0f] CGColor]];
-    _barLayer.colors = @[(id)BMThemeCGColor(@"BT12"), (id)BMThemeCGColor(@"BT71")];
-    _textLayer.foregroundColor = kAnnotationTextColorNormal.CGColor;
+    _barLayer.colors = @[(id)[[UIColor colorWithRed:0xc3/255.0f green:0xd6/255.0f blue:0xfd/255.0f alpha:1.0f] CGColor],
+                         (id)[[UIColor colorWithRed:0xe6/255.0f green:0xed/255.0f blue:0xfc/255.0f alpha:1.0f] CGColor]];
+    _textLayer.foregroundColor = [UIColor greenColor].CGColor;
+    
+//    _barLayer.colors = @[(id)BMThemeCGColor(@"BT12"), (id)BMThemeCGColor(@"BT71")];
+//    _textLayer.foregroundColor = kAnnotationTextColorNormal.CGColor;
+    
 }
 
 -(void)handleFocusState{
-//    _barLayer.colors = @[(id)(BNAVI_HEXRGBCOLOR(0x3385ff).CGColor),
-//                         (id)[[UIColor colorWithRed:0xe6/255.0f green:0xed/255.0f blue:0xfc/255.0f alpha:1.0f] CGColor]];
-    _barLayer.colors = @[(id)BMThemeCGColor(@"TG11"), (id)BMThemeCGColor(@"BT12")];
-    _textLayer.foregroundColor = kAnnotationTextColorFocused.CGColor;
+    
+    _barLayer.colors = @[(id)[[UIColor colorWithRed:0x33/255.0f green:0x85/255.0f blue:0xff/255.0f alpha:1.0f] CGColor],
+                         (id)[[UIColor colorWithRed:0xe6/255.0f green:0xed/255.0f blue:0xfc/255.0f alpha:1.0f] CGColor]];
+    _textLayer.foregroundColor = [UIColor greenColor].CGColor;
+    
+//    _barLayer.colors = @[(id)BMThemeCGColor(@"TG11"), (id)BMThemeCGColor(@"BT12")];
+//    _textLayer.foregroundColor = kAnnotationTextColorFocused.CGColor;
 }
 
 -(void)handleInvalidState{
-//    _barLayer.colors = @[(id)[[UIColor colorWithRed:235/255.0f green:235/255.0f blue:235/255.0f alpha:1.0f] CGColor],
-//                         (id)[[UIColor colorWithRed:247/255.0f green:247/255.0f blue:247/255.0f alpha:1.0f] CGColor]];
-//    _barLayer.colors = @[(id)BMThemeCGColor(@"BG121"), (id)BMThemeCGColor(@"BG122")];
-    _barLayer.colors = @[(id)[UIColor grayColor].CGColor, (id)[UIColor grayColor].CGColor];
+    
+    _barLayer.colors = @[(id)[[UIColor colorWithRed:235/255.0f green:235/255.0f blue:235/255.0f alpha:1.0f] CGColor],
+                         (id)[[UIColor colorWithRed:247/255.0f green:247/255.0f blue:247/255.0f alpha:1.0f] CGColor]];
+  
+    _textLayer.foregroundColor = [UIColor grayColor].CGColor;
+    
+//    _barLayer.colors = @[(id)[UIColor blackColor].CGColor, (id)[UIColor grayColor].CGColor];
 
-    _textLayer.foregroundColor = kAnnotationTextColorNormal.CGColor;
+//    _textLayer.foregroundColor = kAnnotationTextColorNormal.CGColor;
 }
 
 
@@ -121,7 +132,7 @@
  */
 -(CGFloat)barTopOffset{
 //    return BAR_ANNOTATION_HEIGHT;
-    return BAR_SCROLLView_HEIGHT * BAR_TOP_OFFSET_MUL_FACTOR;
+    return self.frame.size.height * BAR_TOP_OFFSET_MUL_FACTOR;
 }
 
 -(CGFloat)barWidth{
@@ -135,7 +146,7 @@
         [CATransaction begin];
         [CATransaction setDisableActions:YES];
 //        CGFloat barHeight = self.frame.size.height * self.value;
-        self.barLayer.frame = CGRectMake((self.frame.size.width - BAR_LAYER_WIDTH)/2, BAR_SCROLLView_HEIGHT - self.barLayer.frame.size.height, BAR_LAYER_WIDTH,self.barLayer.frame.size.height );
+        self.barLayer.frame = CGRectMake((self.frame.size.width - BAR_LAYER_WIDTH)/2, self.frame.size.height - self.barLayer.frame.size.height, BAR_LAYER_WIDTH,self.barLayer.frame.size.height );
         CGFloat textHeight = [self textHeight];
         self.textLayer.frame = CGRectMake(0, self.barLayer.frame.origin.y - textHeight, self.frame.size.width, textHeight);
         [CATransaction commit];
@@ -160,14 +171,15 @@
 
 -(void)setValue:(CGFloat)value{
     _value = value;
-    
     [self.barLayer removeFromSuperlayer];
     
-    CGFloat maxHeight = BAR_SCROLLView_HEIGHT;
+    CGFloat maxHeight = self.frame.size.height;
     CAGradientLayer *barLayer = [CAGradientLayer layer];
     barLayer.startPoint = CGPointMake(0.5, 0);
     barLayer.endPoint = CGPointMake(0.5, 1);
     barLayer.colors = @[(id)BMThemeCGColor(@"BT12"), (id)BMThemeCGColor(@"BT71")];
+    
+
     CGFloat barHeight = (BAR_SCROLLView_HEIGHT - self.barTopOffset) * value;
 
     barLayer.frame = CGRectMake((self.frame.size.width - BAR_LAYER_WIDTH)/2, BAR_SCROLLView_HEIGHT - barHeight, BAR_LAYER_WIDTH,barHeight );
@@ -222,13 +234,13 @@
     
     CAGradientLayer *barLayer = self.barLayer;
     
-    CGFloat barHeight = (BAR_SCROLLView_HEIGHT - self.barTopOffset) * self.value;
+    CGFloat barHeight = (self.frame.size.height - self.barTopOffset) * self.value;
     barLayer.frame = CGRectMake((self.frame.size.width - BAR_LAYER_WIDTH)/2, BAR_SCROLLView_HEIGHT, BAR_LAYER_WIDTH,barHeight );
     CGFloat textHeight = [self textHeight];
-    self.textLayer.frame = CGRectMake(0, BAR_SCROLLView_HEIGHT -textHeight, self.frame.size.width, textHeight);
+    self.textLayer.frame = CGRectMake(0, self.frame.size.height -textHeight, self.frame.size.width, textHeight);
         
     CAKeyframeAnimation *animation = [CAKeyframeAnimation animationWithKeyPath:@"position.y"];
-    animation.values = @[@(BAR_SCROLLView_HEIGHT + barLayer.frame.size.height/2), @(BAR_SCROLLView_HEIGHT- barLayer.frame.size.height/2)];
+    animation.values = @[@(self.frame.size.height + barLayer.frame.size.height/2), @(self.frame.size.height- barLayer.frame.size.height/2)];
     animation.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut];
     animation.duration = duration;
     animation.delegate = self;
@@ -236,7 +248,7 @@
     [barLayer addAnimation:animation forKey:@"position"];
     
     CAKeyframeAnimation *textAnimation = [CAKeyframeAnimation animationWithKeyPath:@"position.y"];
-    textAnimation.values = @[@(BAR_SCROLLView_HEIGHT - self.textLayer.frame.size.height/2), @(BAR_SCROLLView_HEIGHT - barHeight - self.textLayer.frame.size.height/2)];
+    textAnimation.values = @[@(self.frame.size.height - self.textLayer.frame.size.height/2), @(self.frame.size.height - barHeight - self.textLayer.frame.size.height/2)];
     textAnimation.timingFunction = animation.timingFunction;
     textAnimation.duration = animation.duration;
     
@@ -505,7 +517,7 @@
 }
 
 #pragma mark reload
--(void)reloadDataAtIndices:(NSArray<NSNumber*>*)indices{
+-(void)reloadDataAtIndices:(NSArray<NSNumber*>*)indices withAnimation:(BOOL)animation {
     [indices enumerateObjectsUsingBlock:^(NSNumber * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
         NSUInteger targetIndex = obj.unsignedIntegerValue;
         if (self.barViewArray.count <= targetIndex) {
@@ -529,9 +541,11 @@
                 else {
                     itemView.state = kPillarItemViewStateNormal;
                 }
+                if (animation) {
+                    [itemView
+                     performRaiseAnimation:self.animationDuration];
+                }
                 
-                [itemView 
-                 performRaiseAnimation:self.animationDuration];
             }
             else if (itemView.state != kPillarItemViewStateInvalid &&
                      viewAttributes.available) {
@@ -549,6 +563,11 @@
                     else {
                         itemView.state = kPillarItemViewStateNormal;
                     }
+                    if (animation) {
+                        [itemView
+                         performRaiseAnimation:self.animationDuration];
+                    }
+                    
                 }
             }
         }
@@ -635,9 +654,9 @@
             [_barViewArray addObject:itemView];
             
             itemView.value = viewAttrs.value;
-            itemView.state = itemState;
             itemView.annotation = viewAttrs.annotation;
-            
+            itemView.state = itemState;
+
             [itemView addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(didTapItemView:)]];
             
             if (animated) {
@@ -679,6 +698,7 @@
 //            focusedLabel.textColor = BNAVI_HEXRGBCOLOR(0x3385ff);
             focusedLabel.textColor = [UIColor blueColor];
             if ([self.dataSource respondsToSelector:@selector(timePillarView:titleAtIndex:forState:)]) {
+                
                 focusedLabel.text = [self.dataSource timePillarView:self titleAtIndex:i forState:kPillarItemViewStateFocused];
             }
             else {
@@ -809,7 +829,7 @@
 }
 
 - (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView{
-    NSLog(@"future:scrollViewWillBeginDragging");
+//    NSLog(@"future:scrollViewWillBeginDragging");
     if ([self.delegate respondsToSelector:@selector(timePillarViewWillBeginDragging:)]) {
         [self.delegate timePillarViewWillBeginDragging:self];
     }
@@ -817,7 +837,7 @@
 
 - (void)scrollViewWillEndDragging:(UIScrollView *)scrollView withVelocity:(CGPoint)velocity targetContentOffset:(inout CGPoint *)targetContentOffset
 {
-    NSLog(@"future:scrollViewWillEndDragging");
+//    NSLog(@"future:scrollViewWillEndDragging");
     CGFloat targetX = scrollView.contentOffset.x + velocity.x * 360.0;
     
     CGFloat kCellWidth = [self widthForItemNotIntheMiddle];
@@ -855,7 +875,7 @@
 }
 
 -(void)scrollViewDidScroll:(UIScrollView *)scrollView{
-    NSLog(@"future:scrollViewDidScroll");
+//    NSLog(@"future:scrollViewDidScroll");
     self.isScrolling = YES;
     
     [self rearrangeScrollViewSubviews:NO animated:NO];
@@ -868,14 +888,14 @@
 }
 
 - (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView {
-    NSLog(@"future:scrollViewDidEndDecelerating");
+//    NSLog(@"future:scrollViewDidEndDecelerating");
     self.isDragged = YES;
     [self scrollViewDidStop];
     self.isDragged = NO;
 }
 
 -(void)scrollViewDidEndScrollingAnimation:(UIScrollView *)scrollView{
-    NSLog(@"future:scrollViewDidEndScrollingAnimation");
+//    NSLog(@"future:scrollViewDidEndScrollingAnimation");
     if (!self.isPerfomingGuidingAnimation) {
         [self scrollViewDidStop];
     }
@@ -883,14 +903,14 @@
     if (self.isPerfomingGuidingAnimation) {
         self.isPerfomingGuidingAnimation = NO;
         if (!self.scrollView.isTracking) {
-            NSLog(@"future:!self.scrollView.isTracking");
+//            NSLog(@"future:!self.scrollView.isTracking");
             [self.scrollView setContentOffset:self.contentOffset_beforeGuidingAnimation animated:YES] ;
         }
     }
 }
 
 - (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate {
-    NSLog(@"future:scrollViewDidEndDragging");
+//    NSLog(@"future:scrollViewDidEndDragging");
     if (!decelerate) {
         self.isDragged = YES;
         [self scrollViewDidStop];

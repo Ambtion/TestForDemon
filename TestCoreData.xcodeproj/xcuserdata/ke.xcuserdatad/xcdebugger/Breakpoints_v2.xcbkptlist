@@ -30,8 +30,8 @@
             filePath = "TestCoreData/MCTimePillarView.m"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "940"
-            endingLineNumber = "940"
+            startingLineNumber = "947"
+            endingLineNumber = "947"
             landmarkName = "-didTapItemView:"
             landmarkType = "7">
          </BreakpointContent>

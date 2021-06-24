@@ -22,6 +22,8 @@
 - (void)viewDidLoad {
     
     [super viewDidLoad];
+    NSTimeInterval time = [[NSDate date] timeIntervalSince1970];
+    NSLog(@"start %lf", time);
     self.pillarView =  [[MCTimePillarView alloc]
                         initWithFrame:CGRectMake(0, 100, self.view.frame.size.width, 175)];
     self.pillarView.dataSource = self;
@@ -29,11 +31,13 @@
     [self.view addSubview:self.pillarView];
     [self.pillarView reloadData];
     
+    NSLog(@"end %lf", [[NSDate date] timeIntervalSince1970] - time);
+
     UIButton *button = [UIButton buttonWithType:UIButtonTypeSystem];
     [button addTarget:self action:@selector(didClickButton) forControlEvents:UIControlEventTouchUpInside];
-    button.frame = CGRectMake(0, 200, 100, 50);
+    button.frame = CGRectMake(0, 400, 100, 50);
+    button.backgroundColor = [UIColor redColor];
     [self.view addSubview:button];
-    NSLog(@"self.pillarView %d", self.pillarView.indexOfCenterItem);
 }
 
 - (NSUInteger)numberOfItemsInTimePillarView:(MCTimePillarView *)timePillarView {
@@ -47,7 +51,7 @@
     attributes.title = [NSString stringWithFormat:@"index %d",index];
     
     if (index > 3) {
-        attributes.value = 1;
+        attributes.value = (random() % 10 / 10.f);
         attributes.available = YES;
         attributes.annotation = @"35分钟";
         attributes.title2 = @"$20";
@@ -77,7 +81,7 @@
 static BOOL isClick = NO;
 - (void)didClickButton {
     isClick = !isClick;
-//    [self.pillarView reloadDataAtIndices:<#(nonnull NSArray<NSNumber *> *)#>]
+    [self.pillarView reloadDataAtIndices:@[@(4),@(5),@(3)] withAnimation:YES];
 }
 @end
 

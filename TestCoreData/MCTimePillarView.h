@@ -20,13 +20,13 @@ typedef NS_ENUM(NSUInteger, MCPillarItemViewState){
 
 @property (nonatomic) BOOL available;
 
-@property (nonatomic, copy) NSString * title;
+@property (nonatomic, copy, nullable) NSString *title;
 
 @property (nonatomic) CGFloat value; //range is [0,1]
 
-@property (nonatomic, copy) NSString * annotation;
+@property (nonatomic, copy, nullable) NSString *annotation;
 
-@property (nonatomic, copy) NSString * title2;
+@property (nonatomic, copy, nullable) NSString *title2;
 @end
 
 @class MCTimePillarView;
@@ -105,13 +105,16 @@ typedef NS_ENUM(NSUInteger, MCPillarItemViewState){
 
 @property (nonatomic) BOOL isScrolling;
 
++ (CGFloat)viewHeight;
+
 #pragma mark reload
 
 -(void)reloadData;
 
 -(void)reloadDataAnimated:(BOOL)animated;
 
--(void)reloadDataAtIndices:(NSArray<NSNumber*>*)indices;
+-(void)reloadDataAtIndices:(NSArray<NSNumber*>*)indices
+             withAnimation:(BOOL)animation;
 
 -(void)scrollToIndex:(NSInteger)index animated:(BOOL)animated;
 
