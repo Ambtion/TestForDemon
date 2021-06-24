@@ -28,9 +28,34 @@
     self.futureTimeManager.dataSource = self;
     self.futureTimeManager.pillarView.frame = CGRectMake(0, 100, self.futureTimeManager.pillarView.frame.size.width, self.futureTimeManager.pillarView.frame.size.height);
     [self.view addSubview:self.futureTimeManager.pillarView];
-    [self.futureTimeManager resetBaseData:[NSDate date]];
     
+    NSDate *date = [NSDate date];
+//    date = [self curDayTimeTime:date];
+//    date = [date dateByAddingTimeInterval:60 * 60 * 24 - 2];
+    [self.futureTimeManager resetBaseData:date];
+    NSLog(@"%d", [self.futureTimeManager.pillarView indexOfCenterItem]);
     
+}
+
+- (NSDate *)curDayTimeTime:(NSDate *)baseDate {
+    
+    NSDate *beginDate = baseDate;
+    NSDateComponents * compoments = [self dateComponentsFromDate:baseDate];
+    compoments.hour = 0;
+    compoments.minute = 0;
+    compoments.second = 0;
+    NSCalendar * calenDar = [[NSCalendar alloc] initWithCalendarIdentifier:NSCalendarIdentifierGregorian];
+    beginDate = [calenDar dateFromComponents:compoments];
+    return beginDate;
+}
+
+- (NSDateComponents *)dateComponentsFromDate:(NSDate *)date {
+    
+    NSCalendar *calendar =  [[NSCalendar currentCalendar] initWithCalendarIdentifier:NSCalendarIdentifierGregorian];
+    NSTimeZone *timeZone = [[NSTimeZone alloc] initWithName:@"Asia/Shanghai"];
+    [calendar setTimeZone: timeZone];
+    NSDateComponents *components = [calendar components:NSCalendarUnitYear| NSCalendarUnitMonth | NSCalendarUnitDay | NSCalendarUnitHour | NSCalendarUnitMinute  fromDate:date];
+    return components;
 }
 
 - (NSTimeInterval)maxDurationinAllData:(MCFutureTimeManager *)manager {

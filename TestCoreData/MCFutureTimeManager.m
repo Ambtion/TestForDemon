@@ -28,6 +28,10 @@
     self.dateArrays = [self.dateHelper generaFutureTimeModelsWithBaseDate:date];
     
     self.hashMapIndex = [self _generaHashIndexMap];
+    
+    for (MCFutureTimeItem * item in self.dateArrays) {
+        NSLog(@"%@", [item description]);
+    }
     [self.pillarView reloadData];
 }
 
@@ -196,6 +200,13 @@
     }
 }
 
+- (void)timePillarView:(MCTimePillarView *)timePillarView didFocusAtIndex:(NSUInteger)index {
+    
+}
+
+- (void)timePillarView:(MCTimePillarView *)timePillarView didSelectItemView:(MCPillarItemView *)itemView atIndex:(NSUInteger)index {
+    
+}
 #pragma mark - Manager DataSource
 - (NSTimeInterval)maxTime {
     return [self.dataSource maxDurationinAllData:self];

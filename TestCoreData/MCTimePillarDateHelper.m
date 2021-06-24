@@ -8,6 +8,7 @@
 #import "MCTimePillarDateHelper.h"
 
 #define kFutureTimeBlank (15) // 时间刻度 15分钟
+#define kFutureTimeCount (4) // 一时间刻度
 
 @implementation MCFutureTimeItem
 -(NSString *)description {
@@ -46,10 +47,15 @@
     // 当前所在天的零点
     NSDate *curDayDate = [self curDayTimeTime:baseDate];
     
-    // 当前时间对应的索引
-    NSDate *beginDate = [self beginTime:baseDate upLimit:kFutureTimeBlank];
-    NSString *beginDateStr = [self.hMFromatter stringFromDate:beginDate];
-    NSInteger dateBeginIndex = [self getIntervalWithTime:beginDateStr];
+    NSString *beginDateStr = [self.hMFromatter stringFromDate:baseDate];
+    NSInteger dateBeginIndex = [self getIntervalWithTime:beginDateStr] + 1;
+    NSInteger oneDayTimeCount = 24 * 60 / kFutureTimeBlank;
+    
+    if (dateBeginIndex >= oneDayTimeCount) {
+        // 跨过到了第二天
+        curDayDate = [self addDays:1 toDate:curDayDate];
+        dateBeginIndex = 0;
+    }
     
     NSMutableArray *itemArray = [NSMutableArray arrayWithCapacity:0];
     
@@ -95,16 +101,15 @@
     return beginDate;
 }
 
-- (NSDate *)beginTime:(NSDate *)baseDate upLimit:(NSInteger)uplimit {
+
+- (NSDate *)addDays:(NSInteger)days toDate:(NSDate *)date {
     
-    NSDate *beginDate = baseDate;
+    NSDateComponents *dayComponent = [[NSDateComponents alloc] init];
+    dayComponent.day = days;
     
-    NSDateComponents * compoments = [self dateComponentsFromDate:baseDate];
-    if (compoments.minute % uplimit != 0) {
-        compoments.minute = (compoments.minute / uplimit + 1) * uplimit;
-    }
-    beginDate = [self.calendar dateFromComponents:compoments];
-    return beginDate;
+    NSCalendar *theCalendar = [NSCalendar currentCalendar];
+    NSDate *nextDate = [theCalendar dateByAddingComponents:dayComponent toDate:date options:0];
+    return nextDate;
 }
 
 /// 通过时间获取当前时间在一天中的index
@@ -116,7 +121,7 @@
     NSInteger hour = [[time substringToIndex:2] integerValue];
     NSInteger minute = [[time substringFromIndex:3] integerValue];
     
-    return (hour * 60 + minute ) / kFutureTimeBlank;
+    return hour * 4 + minute / kFutureTimeBlank;
 }
 
 - (NSDateComponents *)dateComponentsFromDate:(NSDate *)date {

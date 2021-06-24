@@ -7,32 +7,32 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "07D440BA-D81E-4E75-B137-FC914BE16C22"
+            uuid = "094840B3-128E-4F43-8A7B-2154CCAFB01C"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "TestCoreData/MCTimePillarView.m"
+            filePath = "TestCoreData/MCFutureTimeManager.m"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "502"
-            endingLineNumber = "502"
-            landmarkName = "-observeValueForKeyPath:ofObject:change:context:"
+            startingLineNumber = "208"
+            endingLineNumber = "208"
+            landmarkName = "-timePillarView:didSelectItemView:atIndex:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "E91D29CC-A9D3-4602-BE49-D9FFB7C83A41"
+            uuid = "42D253BC-4AED-4A6F-BF54-EF1182280CA9"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "TestCoreData/MCTimePillarView.m"
+            filePath = "TestCoreData/MCFutureTimeManager.m"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "947"
-            endingLineNumber = "947"
-            landmarkName = "-didTapItemView:"
+            startingLineNumber = "198"
+            endingLineNumber = "198"
+            landmarkName = "-timePillarView:didScrollIndexToCenter:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
