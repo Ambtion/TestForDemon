@@ -17,6 +17,8 @@
 		8A4870D225B13898004B9C1C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8A4870D025B13898004B9C1C /* LaunchScreen.storyboard */; };
 		8A4870D525B13898004B9C1C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A4870D425B13898004B9C1C /* main.m */; };
 		8A49EA3A2683220100460BD3 /* MCTimePillarView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A49EA392683220100460BD3 /* MCTimePillarView.m */; };
+		8A49EA8426842DF100460BD3 /* MCFutureTimeManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A49EA8326842DF100460BD3 /* MCFutureTimeManager.m */; };
+		8A49EA872684530100460BD3 /* MCTimePillarDateHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A49EA862684530100460BD3 /* MCTimePillarDateHelper.m */; };
 		8A7E4577262EB23B006E107D /* CSView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A7E4576262EB23B006E107D /* CSView.m */; };
 		8AA9247725F20C5A006F2205 /* MemoryRead.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AA9247625F20C5A006F2205 /* MemoryRead.m */; };
 		8AB11367262929A00027FB2E /* MCGradientView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AB11365262929A00027FB2E /* MCGradientView.m */; };
@@ -54,6 +56,10 @@
 		8A48711225B17464004B9C1C /* TestCoreData2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = TestCoreData2.xcdatamodel; sourceTree = "<group>"; };
 		8A49EA382683220100460BD3 /* MCTimePillarView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCTimePillarView.h; sourceTree = "<group>"; };
 		8A49EA392683220100460BD3 /* MCTimePillarView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MCTimePillarView.m; sourceTree = "<group>"; };
+		8A49EA8226842DF100460BD3 /* MCFutureTimeManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MCFutureTimeManager.h; sourceTree = "<group>"; };
+		8A49EA8326842DF100460BD3 /* MCFutureTimeManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MCFutureTimeManager.m; sourceTree = "<group>"; };
+		8A49EA852684530100460BD3 /* MCTimePillarDateHelper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MCTimePillarDateHelper.h; sourceTree = "<group>"; };
+		8A49EA862684530100460BD3 /* MCTimePillarDateHelper.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MCTimePillarDateHelper.m; sourceTree = "<group>"; };
 		8A6F356E25E4CBD50079FF51 /* Intents.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Intents.framework; path = System/Library/Frameworks/Intents.framework; sourceTree = SDKROOT; };
 		8A6F357A25E4CBD50079FF51 /* IntentsUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IntentsUI.framework; path = System/Library/Frameworks/IntentsUI.framework; sourceTree = SDKROOT; };
 		8A6F35A925E4D7350079FF51 /* TestCoreData.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = TestCoreData.entitlements; sourceTree = "<group>"; };
@@ -109,6 +115,10 @@
 				8A4870C625B13895004B9C1C /* ViewController.m */,
 				8A49EA382683220100460BD3 /* MCTimePillarView.h */,
 				8A49EA392683220100460BD3 /* MCTimePillarView.m */,
+				8A49EA852684530100460BD3 /* MCTimePillarDateHelper.h */,
+				8A49EA862684530100460BD3 /* MCTimePillarDateHelper.m */,
+				8A49EA8226842DF100460BD3 /* MCFutureTimeManager.h */,
+				8A49EA8326842DF100460BD3 /* MCFutureTimeManager.m */,
 				8AA9247525F20C5A006F2205 /* MemoryRead.h */,
 				8AA9247625F20C5A006F2205 /* MemoryRead.m */,
 				8A3DD0162637C1AC005BF127 /* UIBezierPath+CornerRadius.h */,
@@ -206,10 +216,12 @@
 				8AA9247725F20C5A006F2205 /* MemoryRead.m in Sources */,
 				8A4870D525B13898004B9C1C /* main.m in Sources */,
 				8A4870CD25B13895004B9C1C /* TestCoreData.xcdatamodeld in Sources */,
+				8A49EA872684530100460BD3 /* MCTimePillarDateHelper.m in Sources */,
 				8A4870C725B13895004B9C1C /* ViewController.m in Sources */,
 				8A7E4577262EB23B006E107D /* CSView.m in Sources */,
 				8A4870C125B13895004B9C1C /* AppDelegate.m in Sources */,
 				8A4870C425B13895004B9C1C /* SceneDelegate.m in Sources */,
+				8A49EA8426842DF100460BD3 /* MCFutureTimeManager.m in Sources */,
 				8AB11367262929A00027FB2E /* MCGradientView.m in Sources */,
 				8A49EA3A2683220100460BD3 /* MCTimePillarView.m in Sources */,
 			);

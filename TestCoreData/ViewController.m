@@ -7,11 +7,12 @@
 
 #import "ViewController.h"
 #import "MCTimePillarView.h"
+#import "MCFutureTimeManager.h"
 
-@interface ViewController ()<MCTimePillarViewDataSource,
-                                MCTimePillarViewDelegate>
 
-@property(nonatomic, strong)MCTimePillarView *pillarView;
+@interface ViewController ()<MCFutureTimeManagerDataSource>
+
+@property(nonatomic, strong)MCFutureTimeManager *futureTimeManager;
 
 @end
 
@@ -22,66 +23,37 @@
 - (void)viewDidLoad {
     
     [super viewDidLoad];
-    NSTimeInterval time = [[NSDate date] timeIntervalSince1970];
-    NSLog(@"start %lf", time);
-    self.pillarView =  [[MCTimePillarView alloc]
-                        initWithFrame:CGRectMake(0, 100, self.view.frame.size.width, 175)];
-    self.pillarView.dataSource = self;
-    self.pillarView.delegate = self;
-    [self.view addSubview:self.pillarView];
-    [self.pillarView reloadData];
     
-    NSLog(@"end %lf", [[NSDate date] timeIntervalSince1970] - time);
-
-    UIButton *button = [UIButton buttonWithType:UIButtonTypeSystem];
-    [button addTarget:self action:@selector(didClickButton) forControlEvents:UIControlEventTouchUpInside];
-    button.frame = CGRectMake(0, 400, 100, 50);
-    button.backgroundColor = [UIColor redColor];
-    [self.view addSubview:button];
+    self.futureTimeManager = [MCFutureTimeManager new];
+    self.futureTimeManager.dataSource = self;
+    self.futureTimeManager.pillarView.frame = CGRectMake(0, 100, self.futureTimeManager.pillarView.frame.size.width, self.futureTimeManager.pillarView.frame.size.height);
+    [self.view addSubview:self.futureTimeManager.pillarView];
+    [self.futureTimeManager resetBaseData:[NSDate date]];
+    
+    
 }
 
-- (NSUInteger)numberOfItemsInTimePillarView:(MCTimePillarView *)timePillarView {
-    return 20.f;
+- (NSTimeInterval)maxDurationinAllData:(MCFutureTimeManager *)manager {
+    return 30 * 60;
 }
 
--(MCPillarViewAttributes*)timePillarView:(MCTimePillarView*)pillarView attributesForItemAtIndex:(NSUInteger)index {
-    
-    
-    MCPillarViewAttributes *attributes =  [MCPillarViewAttributes new];
-    attributes.title = [NSString stringWithFormat:@"index %d",index];
-    
-    if (index > 3) {
-        attributes.value = (random() % 10 / 10.f);
-        attributes.available = YES;
-        attributes.annotation = @"35分钟";
-        attributes.title2 = @"$20";
-    } else {
-        attributes.available = NO;
-        attributes.value = 0.3;
-        attributes.annotation = nil;
-        attributes.title2 = nil;
+- (NSTimeInterval)minDurationinAllData:(MCFutureTimeManager *)manager {
+    return 10 * 60;
+}
+
+- (NSTimeInterval)duraionInItem:(MCFutureTimeItem *)item atIndex:(NSUInteger)index manager:(nonnull MCFutureTimeManager *)manager {
+    if (index > 10) {
+        return 0;
     }
-    
-    return attributes;
+    return  10 + (random() % 20) * 60;
 }
 
--(NSString *)timePillarView:(MCTimePillarView *)pillarView titleAtIndex:(NSUInteger)index forState:(MCPillarItemViewState)state {
-    if (state == kPillarItemViewStateFocused) {
-        return @"我选择的";
+- (NSString *)priceInItem:(MCFutureTimeItem *)item atIndex:(NSUInteger)index manager:(MCFutureTimeManager *)manager{
+    if (index > 10) {
+        return nil;
     }
-    return nil;
+    return @"$50";
 }
 
-
-#pragma mark - delegate
-- (void)timePillarView:(MCTimePillarView *)timePillarView didFocusAtIndex:(NSUInteger)index {
-    NSLog(@"timePillarView didFocusAtIndex %d",index);
-}
-
-static BOOL isClick = NO;
-- (void)didClickButton {
-    isClick = !isClick;
-    [self.pillarView reloadDataAtIndices:@[@(4),@(5),@(3)] withAnimation:YES];
-}
 @end
 
