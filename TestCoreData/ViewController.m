@@ -11,6 +11,9 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    UIView *a = @"XXX";
+    UIView *b = a;
+    NSLog(@"");
 }
 
 @end
