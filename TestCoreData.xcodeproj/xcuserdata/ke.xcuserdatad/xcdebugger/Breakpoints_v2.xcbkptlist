@@ -15,9 +15,7 @@
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "315"
-            endingLineNumber = "315"
-            landmarkName = "-resultController"
-            landmarkType = "7">
+            endingLineNumber = "315">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -31,9 +29,7 @@
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "98"
-            endingLineNumber = "98"
-            landmarkName = "-dragBgImage"
-            landmarkType = "7">
+            endingLineNumber = "98">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>
